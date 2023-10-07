@@ -11,7 +11,7 @@ const Slider = () => {
     "https://i.ibb.co/rFFhmfD/gentrit-sylejmani-Jj-Uyj-E-o-Eb-M-unsplash.jpg",
   ];
   return (
-    <div >
+    <div className="">
       
       <Swiper
         modules={[Navigation, Virtual, Pagination, Scrollbar, A11y]}
@@ -21,13 +21,14 @@ const Slider = () => {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         virtual
+        
       >
         {array.map((slideContent, index) => (
           <SwiperSlide key={slideContent} virtualIndex={index}>
             <img
               src={slideContent}
               alt=""
-              style={{ width: "100%", height: "100vh" }}
+              style={{ width: "100%", height: "100vh", }}
             />
           </SwiperSlide>
         ))}

@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import useApi from "../../ContextApi/useApi";
+import ReactModal from "../Mpdal/ReactModal";
 
 const Navbar = () => {
   const {openModal} = useApi()
   const navPath = ["home", "about", "contact"];
   return (
-    <nav className="block border-white/80 bg-white w-full shadow-md border fixed top-0 inset-0 z-10 h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
+    <nav className=" top-0 inset-0 z-10 border-white/80 bg-white w-full shadow-md border fixed  h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
       <div className="">
         <div className="flex items-center max-w-6xl mx-auto justify-between text-gray-900">
           <div className="flex  items-center">
@@ -57,7 +58,7 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-
+<ReactModal></ReactModal>
           {/* menu */}
           <ul className="ml-auto mr-8 capitalize hidden items-center gap-6 lg:flex">
             {navPath.map((name, idx) => (
@@ -73,7 +74,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
           {/* login button */}
           <button
             className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none "
