@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import Slider from "../HomeBanner/Slider/Slider";
 
 const Navbar = () => {
   const navPath = ["home", "about", "contact"];
@@ -53,17 +54,18 @@ const Navbar = () => {
             </span>
           </button>
         </div>
-        <div
+        {/* <div
           className="block h-0 w-full basis-full overflow-hidden text-blue-gray-900 transition-all duration-300 ease-in lg:hidden"
           data-collapse="sticky-navar"
         >
           <ul className="mt-2 mb-4 flex flex-col gap-2 pb-2">
             
           </ul>
-        </div>
+        </div> */}
       </nav>
-      <div className="mx-auto max-w-screen-md py-12">
+      <div className="mx-auto h-[90vh] w-full">
         
+          {/* <Slider></Slider> */}
         
       </div>
     </div>

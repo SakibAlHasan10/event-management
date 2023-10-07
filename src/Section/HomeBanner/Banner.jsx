@@ -2,7 +2,8 @@ import Slider from "./Slider/Slider";
 
 const Banner = () => {
     return (
-        <div>
+        <div className={`bg-[url'${<Slider/>}']`}>
+            hello
             <Slider></Slider>
         </div>
     );
