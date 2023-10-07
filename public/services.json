@@ -22,13 +22,6 @@
           "price": "Price on request"
        },
        {
-          "id": 4,
-          "img": "https://i.ibb.co/6PjNZQN/our-Sports-services5.jpg",
-          "name": "Marketing and Promotion",
-          "description": "Successful sports events require effective marketing and promotion to attract a wide audience and generate excitement. Our marketing and promotion services are tailored to boost attendance and engagement, ensuring that your event reaches its full potential.\n\nWe work with a team of marketing experts who specialize in sports event promotion. Our strategies include digital marketing, social media campaigns, influencer partnerships, and traditional advertising. We create compelling content and engage with fans to build anticipation. With our marketing services, your sports event will gain the visibility it deserves.\n\nPrice: Please contact us for a customized quote based on your specific marketing and promotion needs.",
-          "price": "Price on request"
-       },
-       {
           "id": 5,
           "img": "https://i.ibb.co/3kYv9Qn/our-Sports-services7.jpg",
           "name": "Broadcast and Streaming Solutions",
@@ -40,13 +33,6 @@
           "img": "https://i.ibb.co/r4xhZwn/our-Sports-services8.jpg",
           "name": "Security and Crowd Management",
           "description": "Safety is paramount at any sports event, and our security and crowd management services are dedicated to maintaining order and ensuring the well-being of participants and spectators. Our experienced security personnel are trained to handle various scenarios, from crowd control to emergency response.\n\nWe conduct thorough security assessments and implement robust security protocols tailored to your event's needs. Our goal is to create a safe and enjoyable environment for everyone involved. With our security and crowd management services, you can focus on the event's success, knowing that safety is in capable hands.\n\nPrice: Please contact us for a customized quote based on your specific security and crowd management needs.",
-          "price": "Price on request"
-       },
-       {
-          "id": 7,
-          "img": "https://i.ibb.co/s968CFL/download.png",
-          "name": "Event Technology and Data Analytics",
-          "description": "Leveraging technology is essential to enhance the overall experience for fans and gain valuable insights into your sports event. Our event technology solutions encompass real-time statistics, data analytics, and cutting-edge technology to elevate your event.\n\nWe provide live scoring systems, interactive fan experiences, and data analytics tools that deliver valuable insights into player performance and fan engagement. With our event technology services, you can provide fans with an immersive experience and make informed decisions based on data-driven insights.\n\nPrice: Please contact us for a customized quote based on your specific event technology and data analytics needs.",
           "price": "Price on request"
        },
        {
