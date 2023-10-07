@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
-const AuthContext = createContext(null)
+export const AuthContext = createContext(null)
+import PropTypes from 'prop-types'
 const AuthProvider = ({children}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal=() =>{
@@ -15,5 +16,7 @@ const AuthInfo ={
         </AuthContext.Provider>
     );
 };
-
+AuthProvider.propTypes ={
+    children: PropTypes.node
+}
 export default AuthProvider;
