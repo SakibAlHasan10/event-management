@@ -2,6 +2,7 @@ import { Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+
 const Slider = () => {
   const array = [
     "https://i.ibb.co/cLdTDgj/j-schiemann-Z4-Sxy1-3wd-Y-unsplash.jpg",
@@ -10,7 +11,8 @@ const Slider = () => {
     "https://i.ibb.co/rFFhmfD/gentrit-sylejmani-Jj-Uyj-E-o-Eb-M-unsplash.jpg",
   ];
   return (
-    <div>
+    <div >
+      
       <Swiper
         modules={[Navigation, Virtual, Pagination, Scrollbar, A11y]}
         spaceBetween={0}

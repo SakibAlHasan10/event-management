@@ -4,11 +4,16 @@ import PropTypes from 'prop-types'
 const AuthProvider = ({children}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal=() =>{
+    console.log('jjjjj',true)
     setIsOpen(true);
+  }
+  const closeModal =()=>{
+    setIsOpen(false)
   }
 const AuthInfo ={
     modalIsOpen,
     openModal,
+    closeModal,
 }
     return (
         <AuthContext.Provider value={AuthInfo}>

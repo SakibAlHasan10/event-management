@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
+import useApi from "../../ContextApi/useApi";
 
 const Navbar = () => {
+  const {openModal} = useApi()
   const navPath = ["home", "about", "contact"];
   return (
     <nav className="block border-white/80 bg-white w-full shadow-md border fixed top-0 inset-0 z-10 h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
@@ -78,7 +80,7 @@ const Navbar = () => {
             type="button"
             data-ripple-light="true"
           >
-            <span>Login</span>
+            <Link to={'/login'} onClick={openModal}>Login</Link>
           </button>
         </div>
       </div>
