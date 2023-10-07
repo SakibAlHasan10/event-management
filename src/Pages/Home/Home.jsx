@@ -1,11 +1,11 @@
 import Banner from "../../Section/HomeBanner/Banner";
 import Modal from "react-modal";
 import Services from "../Services/Services";
-import { useLoaderData } from "react-router-dom";
+import useApi from "../../ContextApi/useApi";
 Modal.setAppElement("#root");
 const Home = () => {
-    const {services} = useLoaderData()
-    console.log(services)
+    const {ourServices} = useApi()
+    // console.log(services)
   
 
     return (
@@ -15,7 +15,7 @@ const Home = () => {
             <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto px-8">
 
             {
-                services?.map(service=><Services 
+                ourServices?.map(service=><Services 
                     key={service.id}
                     service={service}
                     ></Services>)
