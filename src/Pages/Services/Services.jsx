@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 const Services = ({service}) => {
-    console.log(service)
+    // console.log(service)
     const {id,img, name, price, description } = service
     const desc = description.slice(0,100)
-    console.log(desc)
+    // console.log(desc)
     return (
         <div>
             <div className="bg-white border-2 rounded-xl  ">

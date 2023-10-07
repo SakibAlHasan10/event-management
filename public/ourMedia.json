@@ -1,0 +1,168 @@
+
+  {
+    "categories": [
+      {
+        "id": 1,
+        "Cricket":[
+            {
+                "id": 1,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 2,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              },
+              {
+                "id": 3,
+                "img": "https://example.com/image3.jpg",
+                "name": "Bob Johnson"
+              },
+              {
+                "id": 4,
+                "img": "https://example.com/image4.jpg",
+                "name": "Alice Brown"
+              },
+              {
+                "id": 5,
+                "img": "https://example.com/image5.jpg",
+                "name": "David Wilson"
+              }
+        ]
+        
+      },
+      {
+        "id": 2,
+        "Football":[
+            {
+                "id": 1,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 2,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              },
+              {
+                "id": 3,
+                "img": "https://example.com/image3.jpg",
+                "name": "Bob Johnson"
+              },
+              {
+                "id": 4,
+                "img": "https://example.com/image4.jpg",
+                "name": "Alice Brown"
+              },
+              {
+                "id": 5,
+                "img": "https://example.com/image5.jpg",
+                "name": "David Wilson"
+              },
+              {
+                "id": 6,
+                "img": "https://example.com/image6.jpg",
+                "name": "Eva Davis"
+              },
+              {
+                "id": 7,
+                "img": "https://example.com/image7.jpg",
+                "name": "Michael Lee"
+              }
+        ]
+        
+      },
+      {
+        "id": 3,
+        "Basketball":[
+            {
+                "id": 1,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 2,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              },
+              {
+                "id": 3,
+                "img": "https://example.com/image3.jpg",
+                "name": "Bob Johnson"
+              },
+              {
+                "id": 4,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 5,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              },
+              {
+                "id": 6,
+                "img": "https://example.com/image3.jpg",
+                "name": "Bob Johnson"
+              }
+              
+        ]
+        
+      },
+      {
+        "id": 4,
+        "Racing":[
+            {
+                "id": 1,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 2,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              },
+              {
+                "id": 3,
+                "img": "https://example.com/image3.jpg",
+                "name": "Bob Johnson"
+              }
+              
+        ]
+        
+      },
+      {
+        "id": 5,
+        "Badminton":[
+            {
+                "id": 1,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 2,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              },
+              {
+                "id": 3,
+                "img": "https://example.com/image3.jpg",
+                "name": "Bob Johnson"
+              },
+              {
+                "id": 4,
+                "img": "https://example.com/image1.jpg",
+                "name": "John Doe"
+              },
+              {
+                "id": 5,
+                "img": "https://example.com/image2.jpg",
+                "name": "Jane Smith"
+              }
+        ]
+        
+      }
+    ]
+  }
+  

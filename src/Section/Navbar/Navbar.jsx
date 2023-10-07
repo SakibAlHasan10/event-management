@@ -1,9 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import useApi from "../../ContextApi/useApi";
-import ReactModal from "../Mpdal/ReactModal";
 
 const Navbar = () => {
-  const {openModal} = useApi()
   const navPath = ["home", "about us", "contact us"];
   return (
     <nav className=" top-0 inset-0 z-10 border-white/80 bg-white w-full shadow-md border fixed  h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
@@ -58,7 +55,6 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-<ReactModal></ReactModal>
           {/* menu */}
           <ul className="ml-auto mr-8 capitalize hidden items-center gap-6 lg:flex">
             {navPath.map((name, idx) => (
@@ -80,7 +76,9 @@ const Navbar = () => {
             type="button"
             data-ripple-light="true"
           >
-            <Link to={'/login'} onClick={openModal}>Login</Link>
+            <Link to={'/sign in'}>
+              Sign In
+            </Link>
           </button>
         </div>
       </div>

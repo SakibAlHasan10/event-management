@@ -28,7 +28,7 @@ const Slider = () => {
             <img
               src={slideContent}
               alt=""
-              style={{ width: "100%", height: "100vh", }}
+              style={{ width: "100%", height: "100vh", zIndex:0 }}
             />
           </SwiperSlide>
         ))}
