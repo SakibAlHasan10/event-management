@@ -12,9 +12,7 @@ const Footer = () => {
               className="w-20"
             />
           </aside>
-          <aside className="text-center w-full">
-            <p>Copyright © 2023 - All right reserved by OurSports</p>
-          </aside>
+          
           <nav className="flex text-2xl gap-4 md:justify-self-end">
             <Link className="text-4xl">
               <FaTwitterSquare />
@@ -27,6 +25,9 @@ const Footer = () => {
             </Link>
           </nav>
         </div>
+        <aside className="text-center mt-3 mb-6 w-full">
+            <p>Copyright © 2023 - All right reserved by OurSports</p>
+          </aside>
       </div>
     </footer>
   );
