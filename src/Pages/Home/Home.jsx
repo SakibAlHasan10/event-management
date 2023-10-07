@@ -2,7 +2,7 @@ import Banner from "../../Section/HomeBanner/Banner";
 
 const Home = () => {
     return (
-        <div className="w-full h-[60vh]">
+        <div className="w-full">
             <Banner></Banner>
         </div>
     );
