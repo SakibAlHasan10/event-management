@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
-// import useApi from "../../ContextApi/useApi";
+import useApi from "../../ContextApi/useApi";
 const Register = () => {
   const [passwordShow, setPasswordShow] = useState(true);
   const [YourName, setYourName] = useState("");
@@ -10,6 +10,7 @@ const Register = () => {
   const [yourPhoto, setYourPhoto] = useState("");
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
+  const {signUpWithEmail} = useApi()
   const handleSignUp = (e) => {
     e.preventDefault();
     if (!/^(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)) {
@@ -18,6 +19,15 @@ const Register = () => {
       return;
     }
     console.log("out site", YourName, email, yourPhoto, password.length, check);
+    signUpWithEmail(email, password)
+    .then((res =>{
+        console.log(res.user)
+    }))
+    .catch(error=>{
+        const code = error.code;
+        const massage = error.massage;
+        console.log(code, massage)
+    })
   };
  
   return (
