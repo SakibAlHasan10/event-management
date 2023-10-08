@@ -6,6 +6,8 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import OurMedia from "../Section/OurMedia/OurMedia";
+import ContactUs from "../Pages/COntactUs/ContactUs";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -16,18 +18,28 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
             },
+            
             {
-                path: '/details/:id',
-                element: <PrivateRoute><ServiceDetails/></PrivateRoute>
-            },
-            {
-                path: '/sign in',
+                path: '/sign-in',
                 element: <Login></Login>
             },
             {
                 path: '/register',
                 element: <Register></Register>
-            }
+            },
+            {
+                path: '/details/:id',
+                element: <PrivateRoute><ServiceDetails/></PrivateRoute>
+            },
+            {
+                path: '/media',
+                element: <PrivateRoute><OurMedia/></PrivateRoute>
+            },
+            {
+                path: '/contact-us',
+                element: <PrivateRoute><ContactUs/></PrivateRoute>
+            },
+
         ]
     }
 ])
