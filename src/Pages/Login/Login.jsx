@@ -6,7 +6,6 @@ import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  // <Toaster></Toaster>
   const [passwordShow, setPasswordShow] = useState(true)
   const [logInError, setLogInError] = useState('')
   const [email, setEmail] = useState("");
@@ -21,14 +20,14 @@ const Login = () => {
     signInWithEmail(email, password)
     .then((res)=>{
       res && toast.success("Your sign-in is Success")
-      
+      e.target.reset();
+      navigate('/')
       console.log(res.user)
     })
     .catch(error=>{
       error && setLogInError('Invalid sign-in information')
       // console.log(error)
     })
-      navigate("/")
       
     // console.log(email, password, check);
 }

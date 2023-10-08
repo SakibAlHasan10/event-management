@@ -7,7 +7,7 @@ const OurMedia = () => {
   return (
     <div className="max-w-6xl mx-auto px-8">
       <h2 className=" text-4xl font-bold text-center mt-20 mb-10">Our Media</h2>
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {media?.slice(0, 8).map((photo, idx) => (
           <SingleImg key={idx} photo={photo}></SingleImg>
         ))}

@@ -4,10 +4,8 @@ import { Navigate } from 'react-router-dom';
 const PrivateRoute = ({children}) => {
     const {user, loading}=useApi()
     if(loading){
-        console.log(loading);
-        return <div className='h-[80vh]'>
-
-            <span className="loading loading-spinner mt-32 text-error"></span>;
+        // console.log(loading);
+        return <div className='h-[70vh] pt-16 flex justify-center'>
             <span className="loading loading-spinner loading-lg"></span>
         </div>
         
@@ -15,7 +13,7 @@ const PrivateRoute = ({children}) => {
     if(user){
         return children
     }
-    return <Navigate to={'/sign-in'}/>
+    return <Navigate to={'/sign-in'}></Navigate>
 };
 PrivateRoute.propTypes ={
     children: PropTypes.node

@@ -16,10 +16,10 @@ const navlink = (
       </NavLink>
     </li>
     <li>
-      <NavLink to={"/our-media"}>Media</NavLink>
+      <NavLink to={"/media"}>Media</NavLink>
     </li>
     <li>
-      <NavLink to={"/about-us"}> about us</NavLink>
+      <NavLink to={"/contact-us"}> about us</NavLink>
     </li>
   </>
 );

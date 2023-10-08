@@ -6,8 +6,8 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import OurMedia from "../Section/OurMedia/OurMedia";
 import ContactUs from "../Pages/COntactUs/ContactUs";
+import Media from "../Pages/Media/Media";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -35,7 +35,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/media',
-                element: <PrivateRoute><OurMedia/></PrivateRoute>
+                loader: ()=>fetch("/ourMedia.json"),
+                element: <PrivateRoute><Media/></PrivateRoute>
             },
             {
                 path: '/contact-us',
