@@ -1,28 +1,36 @@
 import { createContext, useEffect, useState } from 'react';
 export const AuthContext = createContext(null)
 import PropTypes from 'prop-types'
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { app } from '../Firebase/Firebase.config';
+const auth = getAuth(app)
 const AuthProvider = ({children}) => {
-  const [modalIsOpen, setIsOpen] = useState(false);
   const [ourServices, setOurServices] = useState([])
+  const googleProvider = new GoogleAuthProvider()
+  const gitHubProvider = new GithubAuthProvider()
   useEffect(()=>{
     fetch('/services.json')
     .then(res =>res.json())
     .then(data => setOurServices(data.services))
   },[])
-  // modal open
-  const openModal=() =>{
-    setIsOpen(true);
+  // signIn with google
+  const registerWithGoogle = ()=>{
+    return signInWithPopup(auth, googleProvider)
   }
-  // modal close
-  const closeModal =()=>{
-    setIsOpen(false)
+  // sign with github
+  const registerWithGitHub =()=>{
+    return signInWithPopup(auth, gitHubProvider)
   }
-  
+
+
+
+
+
+
 const AuthInfo ={
-    modalIsOpen,
-    openModal,
-    closeModal,
-    ourServices
+    ourServices,
+    registerWithGoogle,
+    registerWithGitHub,
 }
     return (
         <AuthContext.Provider value={AuthInfo}>
