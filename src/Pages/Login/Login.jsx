@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
 import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";
@@ -13,6 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
   const {signInWithEmail} = useApi()
+  const navigate = useNavigate()
   const handleSignIn =(e)=>{
     e.preventDefault()
     setLogInError('')
@@ -20,13 +21,14 @@ const Login = () => {
     signInWithEmail(email, password)
     .then((res)=>{
       res && toast.success("Your sign-in is Success")
+      
       // console.log(res.user)
     })
     .catch(error=>{
       error && setLogInError('Invalid sign-in information')
       // console.log(error)
     })
-    
+      navigate("/")
       
     // console.log(email, password, check);
 }
