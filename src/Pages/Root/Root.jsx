@@ -3,8 +3,9 @@ import Navbar from "../../Section/Navbar/Navbar";
 import Footer from "../../Section/Footer/Footer";
 const Root = () => {
     return (
-        <div >
+        <div className="mt-24">
             <Navbar></Navbar>
+
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
