@@ -2,14 +2,25 @@ import { useState } from "react";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
+import useApi from "../../ContextApi/useApi";
 
 const Login = () => {
   const [passwordShow, setPasswordShow] = useState(true)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
+  const {signInWithEmail} = useApi()
   const handleSignIn =(e)=>{
     e.preventDefault()
+    signInWithEmail(email, password)
+    .then((res)=>{
+      console.log(res.user)
+    })
+    .catch(error=>{
+      const code = error.code;
+      const massage = error.massage;
+      console.log(code, massage)
+    })
     
       
     console.log(email, password, check);
