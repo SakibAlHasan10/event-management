@@ -8,25 +8,27 @@ import toast from "react-hot-toast";
 const Login = () => {
   // <Toaster></Toaster>
   const [passwordShow, setPasswordShow] = useState(true)
+  const [logInError, setLogInError] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
   const {signInWithEmail} = useApi()
   const handleSignIn =(e)=>{
     e.preventDefault()
+    setLogInError('')
+    setCheck(check)
     signInWithEmail(email, password)
     .then((res)=>{
-      res && toast.success("Your sign in is Success")
-      console.log(res.user)
+      res && toast.success("Your sign-in is Success")
+      // console.log(res.user)
     })
     .catch(error=>{
-      const code = error.code;
-      const massage = error.massage;
-      console.log(code, massage)
+      error && setLogInError('Invalid sign-in information')
+      // console.log(error)
     })
     
       
-    console.log(email, password, check);
+    // console.log(email, password, check);
 }
   return (
     <div className="pt-14 pb-10 bg-slate-200">
@@ -60,6 +62,9 @@ const Login = () => {
             </label>
             <span onClick={()=>setPasswordShow(!passwordShow)} className="absolute  -ml-8 pt-4">{ passwordShow? <FaEyeSlash/>:<FaEye/>}</span>
           </div>
+          {
+            logInError && <p className="text-red-500">{logInError}</p>
+          }
           <div className="-ml-2.5">
             <div className="inline-flex items-center">
               <label
@@ -85,10 +90,11 @@ const Login = () => {
                 </span>
               </label>
               <label
-                className="mt-px cursor-pointer select-none font-light text-gray-700"
+                className="mt-px cursor-pointer flex gap-12 select-none font-light text-gray-700"
                 htmlFor="checkbox"
               >
                 Remember Me
+                <a href="#" className="text-green-500 underline">Forgot your password?</a> 
               </label>
             </div>
           </div>

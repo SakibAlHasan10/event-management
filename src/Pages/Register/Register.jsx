@@ -6,32 +6,35 @@ import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";
 const Register = () => {
   const [passwordShow, setPasswordShow] = useState(true);
+  const [passError, setPassError] = useState("");
   const [YourName, setYourName] = useState("");
   const [email, setEmail] = useState("");
   const [yourPhoto, setYourPhoto] = useState("");
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
-  const {signUpWithEmail} = useApi()
+  const { signUpWithEmail } = useApi();
   const handleSignUp = (e) => {
     e.preventDefault();
+    setPassError("");
+    setCheck(check);
     if (!/^(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)) {
-      alert("please one uppercase one special character minimum 6 character");
-      console.log(YourName, email, yourPhoto, password.length, check);
+      setPassError(
+        "Please one uppercase, one special character and minimum 6 character"
+      );
+      // console.log(YourName, email, yourPhoto, password.length, check);
       return;
     }
-    console.log("out site", YourName, email, yourPhoto, password.length, check);
     signUpWithEmail(email, password)
-    .then((res =>{
-        toast.success('Your registration is success')
-        console.log(res.user)
-    }))
-    .catch(error=>{
-        const code = error.code;
-        const massage = error.massage;
-        console.log(code, massage)
-    })
+      .then((res) => {
+        res && toast.success("Your registration is success");
+        // console.log(res.user);
+      })
+      .catch((error) => {
+        error && setPassError("Please provide a valid email");
+        // console.log(error);
+      });
   };
- 
+
   return (
     <div className="pt-14 pb-10 bg-slate-200">
       <div className="relative mx-auto flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -56,6 +59,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
               placeholder=""
+              required
             />
             <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-red-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-red-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-red-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
               Email
@@ -76,6 +80,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
               placeholder=""
+              required
               type={passwordShow ? `password` : "text"}
             />
             <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-red-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-red-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-red-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -88,6 +93,8 @@ const Register = () => {
               {passwordShow ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
+          {/* password validation */}
+          {passError && <p className="text-red-400">{passError}</p>}
           <div className="-ml-2.5">
             <div className="inline-flex items-center">
               <label
@@ -116,7 +123,15 @@ const Register = () => {
                 className="mt-px cursor-pointer select-none font-light text-gray-700"
                 htmlFor="checkbox"
               >
-                Remember Me
+                You accept our{" "}
+                <a href="#" className="text-green-500 underline">
+                  Terms
+                </a>{" "}
+                and{" "}
+                <a href="#" className="text-green-500 underline">
+                  Privacy Policy
+                </a>
+                .
               </label>
             </div>
           </div>
@@ -132,9 +147,9 @@ const Register = () => {
           </button>
           <RegisterOthersWay></RegisterOthersWay>
           <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
-            Don&apos;t have an account?
+            Have an account already?
             <Link
-              to={"/sign in"}
+              to={"/sign-in"}
               className="ml-1 block font-sans text-sm font-bold leading-normal text-red-500 antialiased"
             >
               Sign In
