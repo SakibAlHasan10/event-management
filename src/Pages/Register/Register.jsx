@@ -9,7 +9,15 @@ const Register = () => {
   const [yourPhoto, setYourPhoto] = useState('')
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
-  console.log(YourName,email,yourPhoto, password,  check);
+  const handleSignUp =(e)=>{
+      e.preventDefault()
+      if(!/^(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
+          alert('please one uppercase one special character minimum 6 character')
+          console.log(YourName,email,yourPhoto, password.length,  check);
+          return
+        }
+        console.log('out site',YourName,email,yourPhoto, password.length,  check);
+  }
   return (
     <div className="pt-14 pb-10 bg-slate-200">
       <div className="relative mx-auto flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -95,9 +103,9 @@ const Register = () => {
           </div>
         </div>
         <div className="p-6 pt-0">
-          <button
+          <button onClick={handleSignUp}
             className="block w-full select-none rounded-lg bg-gradient-to-tr from-red-600 to-red-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button"
+            type="submit"
             data-ripple-light="true"
           >
             Sign Up
