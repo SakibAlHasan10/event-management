@@ -4,6 +4,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
 import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
 const Register = () => {
   const [passwordShow, setPasswordShow] = useState(true);
   const [passError, setPassError] = useState("");
@@ -28,6 +29,15 @@ const Register = () => {
       .then((res) => {
         res && toast.success("Your registration is success");
         // console.log(res.user);
+
+        // update profile
+        updateProfile(res.user, {
+          displayName: YourName,
+          photoURL: yourPhoto,
+        }).then(()=>{
+          console.log('profile updated')
+        })
+        .catch((error)=>console.error(error))
       })
       .catch((error) => {
         error && setPassError("Please provide a valid email");

@@ -22,7 +22,7 @@ const Login = () => {
     .then((res)=>{
       res && toast.success("Your sign-in is Success")
       
-      // console.log(res.user)
+      console.log(res.user)
     })
     .catch(error=>{
       error && setLogInError('Invalid sign-in information')
