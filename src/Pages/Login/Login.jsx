@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
 import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";

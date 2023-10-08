@@ -1,23 +1,36 @@
 import Banner from "../../Section/HomeBanner/Banner";
 import Services from "../Services/Services";
-import useApi from "../../ContextApi/useApi";
 import OurMedia from "../../Section/OurMedia/OurMedia";
+import { useLoaderData } from "react-router-dom";
+import { createContext, useEffect, useState } from "react";
+export const HomeContext = createContext(null)
 const Home = () => {
-  const { ourServices } = useApi();
-
+  const services = useLoaderData()
+  const [media, setMedia] = useState([])
+  useEffect(() => {
+    fetch("/ourMedia.json")
+      .then((res) => res.json())
+      .then((data) => setMedia(data.category));
+  }, []);
+  const homeValue ={
+    media
+  }
   return (
+    <HomeContext.Provider value={homeValue}>
     <div className="w-full">
       <Banner></Banner>
       <h2 className="text-4xl font-bold text-center max-w-6xl mx-auto px-8 mb-10 mt-20">
         Our Services
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 gap-5 max-w-6xl mx-auto px-8">
-        {ourServices?.map((service) => (
+        {services?.map((service) => (
           <Services key={service.id} service={service}></Services>
         ))}
       </div>
+
       <OurMedia></OurMedia>
     </div>
+    </HomeContext.Provider>
   );
 };
 

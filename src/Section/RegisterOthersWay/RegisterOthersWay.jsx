@@ -8,7 +8,8 @@ const RegisterOthersWay = () => {
       .then((res) => {
         console.log(res.user);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error)});
   };
   //   sign up with github
   const handleGithubSignUp = () => {

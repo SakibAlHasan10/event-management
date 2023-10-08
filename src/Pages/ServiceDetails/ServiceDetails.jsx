@@ -1,12 +1,10 @@
-import { Link, useParams } from "react-router-dom";
-import useApi from "../../ContextApi/useApi";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const ServiceDetails = () => {
+  const services = useLoaderData()
   const { id } = useParams();
-  const { ourServices } = useApi();
-  const service = ourServices.find((ser) => ser.id === +id);
+  const service = services.find((ser) => ser.id === +id);
   const { img, name, description, price } = service;
-  console.log(id, ourServices, service);
   return (
     <div className="pt-36 bg-slate-200 pb-12">
       <div className="bg-white px-8 py-6  max-w-6xl mx-auto">
