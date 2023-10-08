@@ -3,8 +3,10 @@ import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
 import useApi from "../../ContextApi/useApi";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  // <Toaster></Toaster>
   const [passwordShow, setPasswordShow] = useState(true)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,6 +16,7 @@ const Login = () => {
     e.preventDefault()
     signInWithEmail(email, password)
     .then((res)=>{
+      res && toast.success("Your sign in is Success")
       console.log(res.user)
     })
     .catch(error=>{

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
 import useApi from "../../ContextApi/useApi";
+import toast from "react-hot-toast";
 const Register = () => {
   const [passwordShow, setPasswordShow] = useState(true);
   const [YourName, setYourName] = useState("");
@@ -21,6 +22,7 @@ const Register = () => {
     console.log("out site", YourName, email, yourPhoto, password.length, check);
     signUpWithEmail(email, password)
     .then((res =>{
+        toast.success('Your registration is success')
         console.log(res.user)
     }))
     .catch(error=>{

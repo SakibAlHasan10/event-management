@@ -1,6 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
-
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import useApi from "../../ContextApi/useApi";
+import { FaUserAlt } from 'react-icons/fa';
+import toast from "react-hot-toast";
 const Navbar = () => {
+  const {user, logOut} = useApi()
+  const userPhoto = user?.photoURL;
+  const navigate = useNavigate()
+  const handleLogOut=()=>{
+    logOut()
+    .then((res)=>{
+      toast.success('Your sign out Successful')
+      res && navigate('/')
+    })
+    .catch(error=>{
+      toast.error(`${error.massage}`)
+    })
+  }
   const navPath = ["home", "about us", "contact us"];
   return (
     <nav className=" top-0 inset-0 z-10 border-white/80 bg-white w-full shadow-md border fixed  h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
@@ -71,15 +86,42 @@ const Navbar = () => {
             ))}
           </ul>
           {/* login button */}
-          <button
-            className="middle none center rounded-lg bg-gradient-to-tr from-red-600 to-red-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none "
-            type="button"
-            data-ripple-light="true"
-          >
-            <Link to={'/sign in'}>
-              Sign In
-            </Link>
-          </button>
+          <>
+          {
+            user ? 
+            <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-14 text-center px-2 pt-1 text-red-400 rounded-full">
+              {
+                userPhoto? 
+                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                :  <span className="text-3xl "><FaUserAlt/></span> 
+              }
+              </div>
+            </label>
+            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li onClick={handleLogOut} className="btn btn-sm w-full"><Link>Sign Out </Link></li>
+            </ul>
+          </div>
+          :<button
+          className="middle none center rounded-lg bg-gradient-to-tr from-red-600 to-red-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none "
+          type="button"
+          data-ripple-light="true"
+        >
+          <Link to={'/sign in'}>
+            Sign In
+          </Link>
+        </button>
+          }
+          </>
+          
         </div>
       </div>
     </nav>
