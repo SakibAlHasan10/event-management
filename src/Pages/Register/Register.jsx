@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import RegisterOthersWay from "../../Section/RegisterOthersWay/RegisterOthersWay";
 import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
+  const navigate = useNavigate()
   const [passwordShow, setPasswordShow] = useState(true);
   const [passError, setPassError] = useState("");
   const [YourName, setYourName] = useState("");
@@ -27,6 +28,7 @@ const Register = () => {
     }
     signUpWithEmail(email, password)
       .then((res) => {
+        navigate('/')
         res && toast.success("Your registration is success");
         // console.log(res.user);
 
@@ -35,7 +37,7 @@ const Register = () => {
           displayName: YourName,
           photoURL: yourPhoto,
         }).then(()=>{
-          console.log('profile updated')
+          // console.log('profile updated')
         })
         .catch((error)=>console.error(error))
       })

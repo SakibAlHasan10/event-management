@@ -6,27 +6,28 @@ import useApi from "../../ContextApi/useApi";
 import toast from "react-hot-toast";
 
 const Login = () => {
+  const navigate = useNavigate()
   const [passwordShow, setPasswordShow] = useState(true)
   const [logInError, setLogInError] = useState('')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [check, setCheck] = useState(false);
   const {signInWithEmail} = useApi()
-  const navigate = useNavigate()
+  // console.log(logInError)
   const handleSignIn =(e)=>{
     e.preventDefault()
     setLogInError('')
     setCheck(check)
     signInWithEmail(email, password)
     .then((res)=>{
+      navigate('/')
       res && toast.success("Your sign-in is Success")
       e.target.reset();
-      navigate('/')
-      console.log(res.user)
+      // console.log(res.user)
     })
     .catch(error=>{
-      error && setLogInError('Invalid sign-in information')
-      // console.log(error)
+      console.log(error,'errrrrrssssss')
+      // error.code && setLogInError('Invalid sign-in information')
     })
       
     // console.log(email, password, check);

@@ -1,23 +1,35 @@
+import toast from "react-hot-toast";
 import useApi from "../../ContextApi/useApi";
+import { useNavigate } from "react-router-dom";
 
 const RegisterOthersWay = () => {
   const { registerWithGoogle, registerWithGitHub } = useApi();
+  const navigate = useNavigate()
      //   sign up with google
   const handleGoogleSignUp = () => {
     registerWithGoogle()
       .then((res) => {
-        console.log(res.user);
+        navigate('/')
+        res && toast.success("Your registration is success");
+        // console.log(res.user);
       })
       .catch((error) => {
-        console.error(error)});
+        navigate('/')
+        error && toast.error("Please check your information");
+        // console.error(error)
+      });
   };
   //   sign up with github
   const handleGithubSignUp = () => {
     registerWithGitHub()
       .then((res) => {
-        console.log(res.user);
+        res && toast.success("Your registration is success");
+        // console.log(res.user);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        error && toast.error("Please check your information");
+        // console.error(error)
+      });
   };
     return (
         <div>

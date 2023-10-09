@@ -4,7 +4,7 @@ import SingleClient from "./SingleClient";
 const Client = () => {
   const [clientReviews, setClientReviews] = useState([]);
   useEffect(() => {
-    fetch("../../public/clientReviews.json")
+    fetch("/clientReviews.json")
       .then((res) => res.json())
       .then((data) => setClientReviews(data));
   }, []);

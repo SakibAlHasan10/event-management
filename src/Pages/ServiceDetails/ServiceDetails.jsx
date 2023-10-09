@@ -6,7 +6,7 @@ const ServiceDetails = () => {
   const service = services.find((ser) => ser.id === +id);
   const { img, name, description, price } = service;
   return (
-    <div className="pt-36 bg-slate-200 pb-12">
+    <div className="pt-14 bg-slate-200 pb-12">
       <div className="bg-white px-8 py-6  max-w-6xl mx-auto">
         <h2 className="text-4xl font-semibold">{name}</h2>
         <img src={img} alt="" className="w-[80%] border mt-8 mb-6" />
