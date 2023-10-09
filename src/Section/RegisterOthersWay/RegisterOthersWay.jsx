@@ -10,20 +10,20 @@ const RegisterOthersWay = () => {
     registerWithGoogle()
       .then((res) => {
         navigate('/')
-        res && toast.success("Your registration is success");
+        res && toast.success("Your Sign-in is successfully");
         // console.log(res.user);
       })
       .catch((error) => {
-        navigate('/')
         error && toast.error("Please check your information");
         // console.error(error)
       });
-  };
-  //   sign up with github
-  const handleGithubSignUp = () => {
-    registerWithGitHub()
+    };
+    //   sign up with github
+    const handleGithubSignUp = () => {
+      registerWithGitHub()
       .then((res) => {
-        res && toast.success("Your registration is success");
+        res && toast.success("Your Sign-in is successfully");
+        navigate('/')
         // console.log(res.user);
       })
       .catch((error) => {
