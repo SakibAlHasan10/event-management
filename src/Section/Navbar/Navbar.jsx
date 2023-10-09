@@ -40,7 +40,7 @@ const Navbar = () => {
   };
   // const navPath = ["home", "about us", "contact us"];
   return (
-    <nav className=" top-0 inset-0 z-10 border-white/80 bg-white w-full shadow-md border fixed  h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
+    <nav className=" top-0 inset-0 z-50 border-white/80 bg-white w-full shadow-md border fixed  h-max rounded-none  bg-opacity-80 py-2 px-4 text-white  backdrop-blur-2xl backdrop-saturate-200 lg:px-8">
       <div className="">
         <div className="flex items-center max-w-6xl mx-auto justify-between text-gray-900">
           <div className="flex  items-center">

@@ -4,7 +4,7 @@ const SubMedia = ({ photo }) => {
 //   console.log(photo);
   return (
     <div>
-      <img src={img} alt="" className="w-full hover: cursor-pointer h-48" />
+      <img src={img} alt="" className="w-full hover: cursor-pointer h-48" data-aos='flip-up' />
     </div>
   );
 };

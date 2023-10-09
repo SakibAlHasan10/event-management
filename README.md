@@ -2,7 +2,7 @@
 
 # **[Project Live Link](https://our-sports.web.app/)**.
 
-*[Click here for the live project:](https://our-sports.web.app/)*
+*[Click here for go to live project](https://our-sports.web.app/)*
  
 - This is a single page application.
 - Create any sport event using our app.

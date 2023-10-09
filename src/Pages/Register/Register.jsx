@@ -19,12 +19,26 @@ const Register = () => {
     e.preventDefault();
     setPassError("");
     setCheck(check);
-    if (!/^(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)) {
+    if (password.length < 6) {
       setPassError(
-        "Please one uppercase, one special character and minimum 6 character"
+        " Minimum 6 character"
       );
       // console.log(YourName, email, yourPhoto, password.length, check);
       return;
+    }
+    else if(!/(?=.*[A-Z])/.test(password)){
+      setPassError(
+        "Minimum one  uppercase character"
+        // , one special character and minimum 6 character"
+        // !/^(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password))
+      );
+      return
+    }
+    else if(!/(?=.*[@$!%*#?&])/.test(password)){
+      setPassError(
+        "Minimum one special character"
+      );
+      return
     }
     signUpWithEmail(email, password)
       .then((res) => {

@@ -8,9 +8,6 @@ const Client = () => {
       .then((res) => res.json())
       .then((data) => setClientReviews(data));
   }, []);
-
-  // console.log(client)
-  // const {} = client
   return (
     <div >
         <h2 className="text-center text-5xl font-bold mt-14"> Testimonials</h2>

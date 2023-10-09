@@ -28,7 +28,6 @@ const Home = () => {
           <Services key={idx} service={service}></Services>
         ))}
       </div>
-
       <OurMedia></OurMedia>
       <Client></Client>
     </div>

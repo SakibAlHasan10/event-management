@@ -12,11 +12,11 @@ const ContactUs = () => {
         <div className="bg-[url('https://i.ibb.co/3kYv9Qn/our-Sports-services7.jpg')] w-full h-[500px] bg-center bg-cover">
           <div className="text-center flex items-center justify-center">
             <div className="text-center my-32 ">
-              <h2 className="text-5xl block p-4  text-blue-300 font-extrabold bg-black">
+              <h2 className="text-4xl md:text-5xl block p-4  text-blue-300 font-extrabold bg-black">
                 HOSPITALITY BOXES &{" "}
               </h2>
 
-              <h2 className="text-5xl text-blue-400 mx-20 pb-4 font-extrabold bg-black">
+              <h2 className="text-4xl md:text-5xl text-blue-400 mx-20 pb-4 font-extrabold bg-black">
                 SEATS 2016/17
               </h2>
               <button className="border-2 border-blue-400 h-12 mx-auto mt-8 text-white bg-blue-400 hover:bg-[#ffffff09] font-bold text-xl w-[300px]">
