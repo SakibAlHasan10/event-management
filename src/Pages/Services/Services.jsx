@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
+
 const Services = ({service}) => {
     // console.log(service)
     const {id,img, name, price, description } = service
     const desc = description.slice(0,100)
     // console.log(desc)
+    
     return (
         <div>
-            <div className="bg-white border-2 rounded-xl  ">
+            <div className="bg-white border-2 rounded-xl " >
                 <img src={img} alt="" className="w-full border-b h-52 rounded-t-xl" />
                 <div className="px-5 py-3 flex  flex-col">
                 <h2 className="text-2xl flex-none mb-2 hover:text-red-500  font-semibold">{name}</h2>

@@ -22,12 +22,11 @@ const Login = () => {
     .then((res)=>{
       navigate('/')
       res && toast.success("Your sign-in is Success")
-      e.target.reset();
+      // e.target.reset();
       // console.log(res.user)
     })
     .catch(error=>{
-      console.log(error,'errrrrrssssss')
-      // error.code && setLogInError('Invalid sign-in information')
+      error.code && setLogInError('Invalid sign-in information')
     })
       
     // console.log(email, password, check);

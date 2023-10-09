@@ -124,7 +124,8 @@ const Navbar = () => {
           <>
             {user ? (
               <>
-                <h3 className="mr-2">{userName}</h3>
+              <div className="flex items-center">
+                <h3 className="mr-2 ">{userName}</h3>
                 <div className="dropdown dropdown-end">
                   <label
                     tabIndex={0}
@@ -161,6 +162,8 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </div>
+
+              </div>
               </>
             ) : (
               <button
